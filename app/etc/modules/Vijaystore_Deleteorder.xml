@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vijaystore_Deleteorder>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Vijaystore_Deleteorder>
+    </modules>
+</config>

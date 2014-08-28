@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vijaystore_Deleteorder>
+            <version>1.0.0</version>
+        </Vijaystore_Deleteorder>
+    </modules>
+	
+	<frontend>
+		<routers>
+			<deleteorder>
+				<use>standard</use>
+				<args>
+					<module>Vijaystore_Deleteorder</module>
+					<frontName>deleteorder</frontName>
+				</args>
+			</deleteorder>
+		</routers>
+	</frontend>
+	
+    <global>
+		<blocks>
+            <deleteorder>
+                <class>Vijaystore_Deleteorder_Block</class>
+            </deleteorder>
+			<adminhtml>
+				<rewrite>
+					<sales_order_grid>Vijaystore_Deleteorder_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+				</rewrite>
+
+				<rewrite>
+					<sales_order_view>Vijaystore_Deleteorder_Block_Adminhtml_Sales_Order_View</sales_order_view>
+				</rewrite>
+            </adminhtml>
+        </blocks>
+		
+		<models>
+			<deleteorder>
+				<class>Vijaystore_Deleteorder_Model</class>
+			</deleteorder>
+		</models>
+
+		<helpers>
+			<deleteorder>
+				<class>Vijaystore_Deleteorder_Helper</class>
+			</deleteorder>
+		</helpers>	
+    </global>
+	
+	
+	<admin>
+		<routers>
+			<deleteorder>
+				<use>admin</use>
+				<args>
+					<module>Vijaystore_Deleteorder</module>
+					<frontName>deleteorder</frontName>
+				</args>
+			</deleteorder>
+		</routers>
+	</admin>
+	
+	<adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+				    <children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<deleteorder_tab>
+											<title>Sales Order Mass Delete Setting</title>
+										</deleteorder_tab>				
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+
+	<default>
+		<deleteorder_tab>
+			<deleteorder_setting>
+				<deleteorder_active>0</deleteorder_active>
+			</deleteorder_setting>
+		</deleteorder_tab>
+	</default>
+	
+</config>
